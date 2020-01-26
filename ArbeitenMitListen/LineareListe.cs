@@ -8,6 +8,7 @@ namespace ArbeitenMitListen {
     class LineareListe {
         // Fields
         private ListenElement erstes=null, aktuelles=null, neues=null, letztes=null;
+        private int anzahlElemente = 0;
 
         // Methodes
         public void Hinzufügen(int wert) {
@@ -17,6 +18,7 @@ namespace ArbeitenMitListen {
                 neues.Wert = wert;
                 erstes = neues;
                 letztes = erstes;
+                
             }
             else {
                 neues = new ListenElement ();
@@ -24,6 +26,22 @@ namespace ArbeitenMitListen {
                 letztes.Nachfolger = neues;
                 letztes = neues;
             }
+            anzahlElemente++;
+        }
+
+        private ListenElement FindeElement (int wert) {
+            aktuelles = erstes;
+            do {
+                if ( aktuelles.Wert == wert ) {
+                    break;
+                }
+                aktuelles = aktuelles.Nachfolger;
+            } while ( aktuelles != null );
+            return aktuelles;
+        }
+
+        public void LöscheElement () {
+
         }
 
         public void ZeigeListElemente () {

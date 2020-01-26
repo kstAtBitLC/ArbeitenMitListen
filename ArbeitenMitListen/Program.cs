@@ -40,7 +40,6 @@ namespace ArbeitenMitListen
             ll.Hinzufügen ( 50 );
             ll.Hinzufügen ( 25 );
 
-
             ll.ZeigeListElemente ();
 
             Console.ReadLine ();
