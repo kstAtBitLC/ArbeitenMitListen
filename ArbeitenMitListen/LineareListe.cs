@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 namespace ArbeitenMitListen {
     class LineareListe {
         // Fields
-        private ListenElement erstes=null, aktuelles=null, neues=null, letztes=null;
+        private ListenElement erstes = null, aktuelles = null, neues = null, letztes = null;
         private int anzahlElemente = 0;
 
         // Methodes
-        public void Hinzufügen(int wert) {
+        public void Hinzufügen (int wert) {
             // Die Liste ist leer, es gibt noch kein ListElement
             if ( erstes == null ) {
                 neues = new ListenElement ();
                 neues.Wert = wert;
                 erstes = neues;
                 letztes = erstes;
-                
+
             }
             else {
                 neues = new ListenElement ();
@@ -40,6 +40,18 @@ namespace ArbeitenMitListen {
             return aktuelles;
         }
 
+        public bool GibtEsDasElelent (int zahl) {
+            ListenElement le = FindeElement ( zahl );
+            bool gibts = false;
+
+            if ( le != null ) {
+                if ( zahl == le.Wert ) {
+                    gibts = true;
+                }
+            }
+            return gibts;
+        }
+
         public void LöscheElement () {
 
         }
@@ -48,10 +60,21 @@ namespace ArbeitenMitListen {
             aktuelles = erstes;
 
             while ( aktuelles != null ) {
-                Console.WriteLine (aktuelles.Wert);
+                Console.WriteLine ( aktuelles.Wert );
                 aktuelles = aktuelles.Nachfolger;
             }
         }
+
+        // Zeige Anzahl der Listenelemente
+
+        // Methode: MachZuArray
+
+        // Methode ZeigeDasErste
+
+        // Methode ZeigeDasLetzte
+
+        // Methode ZeigeListeInUmgekehrterReihenfolge
+
     }
 
 }
