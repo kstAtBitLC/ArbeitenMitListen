@@ -66,14 +66,38 @@ namespace ArbeitenMitListen {
         }
 
         // Zeige Anzahl der Listenelemente
+        public int AnzahlListenElemente () {
+            return this.anzahlElemente;
+        }
 
         // Methode: MachZuArray
+        public int[] MachZuArray () {
+            int [] array = new int [ anzahlElemente ];
+
+            aktuelles = erstes; 
+            for ( int i = 0 ; i < anzahlElemente ; i++ ) {
+                array [ i ] = aktuelles.Wert;
+                aktuelles = aktuelles.Nachfolger;
+            }
+            return array;
+        }
 
         // Methode ZeigeDasErste
+        public int ZeigeDasErste () {
+            return erstes.Wert;
+        }
 
         // Methode ZeigeDasLetzte
+        public int ZeigeDasLetzte () {
+            return letztes.Wert;
+        }
 
         // Methode ZeigeListeInUmgekehrterReihenfolge
+        public int[] ZeigeListeInUmgekehrterReihenfolge () {
+            int [] array = MachZuArray ();
+            Array.Reverse ( array );
+            return array;
+        }
 
     }
 

@@ -44,9 +44,20 @@ namespace ArbeitenMitListen
 
             Console.WriteLine ( ll.GibtEsDasElelent (30) );
 
+            Console.WriteLine ("Zeige Listelemente");
             ll.ZeigeListElemente ();
 
+            Console.WriteLine ("Zeige Array");
+            int [] arrayAusListe = ll.MachZuArray ();
+            foreach ( var item in arrayAusListe ) {
+                Console.WriteLine (item);
+            }
 
+            Console.WriteLine ("Umgekehrte Reiheinfolge");
+            int[] array2 = ll.ZeigeListeInUmgekehrterReihenfolge ();
+            foreach ( var item in array2 ) {
+                Console.WriteLine (item);
+            }
 
             Console.ReadLine ();
         }
